@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Menu from './components/Menu';
+import Whitescreen from './components/Whitescreen';
 
 function App() {
+
+  const [opened, setOpened] = useState('');
+
+  const open = () => { setOpened('opened') };
+  const close = () => { setOpened('closed') };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Menu close={close} />
+      <Whitescreen value={opened} open={open} />
     </div>
   );
 }

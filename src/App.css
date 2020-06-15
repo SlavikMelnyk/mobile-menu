@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes open {
   from {
     transform: rotate(0deg);
+    left: 0%;
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(-11deg);
+    left: 73%;
   }
+}
+@keyframes close {
+  from {
+    transform: rotate(-11deg);
+    left: 73%;
+  }
+  to {
+    transform: rotate(0deg);
+    left: 0%;
+  }
+}
+
+.opened {
+  animation: open 0.5s;
+  animation-fill-mode: both;
+}
+.closed {
+  animation: close 0.4s;
+  animation-fill-mode: both;
+}
+
+
+.App {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu, .whitescreen {
+  height: 100vh;
+  border-top-left-radius: 50px;
+}
+.whitescreen {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  background: white;
+  padding: 43px 36px;
+}
+.menu {
+  background: #1F1B33;
+  padding: 122px 27px;
+}
+
+
+.username {
+  font-family: Avenir Black;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: normal;
+  color: white;
+  margin: 0 31px;
+}
+.links {
+  margin-top: 57px;
+  width: 176px;
+  padding: 0;
+}
+hr {
+  margin-bottom: 19px;
+}
+li {
+  margin-bottom: 19px;
+  display: block;
+  font-family: Avenir;
+  font-size: 20px;
+  line-height: 27px;
+  color: white;
+  text-decoration: none;
+  height: 51px;
+  width: 175px;
+  padding: 12px 30px;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+.start {
+  color: #FC8074;
+  background-color: rgba(252, 128, 116, 0.2);
+}
+
+.menu-burger-button, .start-text {
+  display: inline-block;
+}
+
+.start-text {
+  color: #9F9FA0;
+  font-family: Avenir Medium;
+  font-size: 24px;
+  letter-spacing: 5px;
+  line-height: 33px;
+  margin: 0 35px;
+}
+
+.burger-part {
+  width: 30px;
+  height: 4px;
+  background-color: #E8E5E5;
+  margin-top: 6px;
 }
