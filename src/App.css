@@ -47,7 +47,8 @@
 }
 .menu {
   background: #1F1B33;
-  padding: 122px 27px;
+  padding: 122px 0 0 27px;
+  box-sizing: border-box;
 }
 
 
